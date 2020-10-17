@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BoxService } from './services/box.service';
-import { BoxPositionData } from './models/box.model';
-import { BoxSizings } from './models/config.model';
+import { BoxPositionData, BoxSizings, BoxMoveEvent } from './models';
 
 export interface BoxData {
   x: number;
@@ -55,13 +54,13 @@ export class AppComponent implements OnInit {
       console.log('Please select a box to delete');
     }
   }
-  moveBox(event: any) {
+  moveBox(event: BoxMoveEvent) {
+    const { key } = event;
     const upKeys = ['w', 'ArrowUp'];
     const downKeys = ['s', 'ArrowDown'];
     const leftKeys = ['a', 'ArrowLeft'];
     const rightKeys = ['d', 'ArrowRight'];
     const allowedKeys = [...upKeys, ...downKeys, ...leftKeys, ...rightKeys];
-    const { key } = event;
     if (this.selected >= 0 && key && allowedKeys.includes(key)) {
       if (upKeys.includes(key)) {
         this.box$.moveUp(this.selected);

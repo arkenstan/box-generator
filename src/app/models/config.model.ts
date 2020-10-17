@@ -7,3 +7,7 @@ export interface BoxSizings {
   boundingBoxSize: Size;
   boxSize: Size;
 }
+
+export interface BoxMoveEvent {
+  key: string;
+}
