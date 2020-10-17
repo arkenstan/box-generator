@@ -5,10 +5,8 @@ Moveable box generator.
 ## Pre-requisites
 
 - Install [nodejs 8+](https://nodejs.org/en/) and npm 4+
-- Install angular cli
-  ```
-  npm i -g @angular/cli
-  ```
+- Install angular cli `npm i -g @angular/cli`
+- Install Dependencies by running `npm install` in project's root directory
 
 ## Local Serve
 
