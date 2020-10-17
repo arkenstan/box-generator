@@ -8,10 +8,10 @@ export class BoxService {
   private count = 0;
   private delta = 10;
   private defaultGap = 10;
-  private boundingBoxWidth = 600;
-  private boundingBoxHeight = 600;
-  private boxWidth = 150;
-  private boxHeight = 100;
+  private boundingBoxWidth = 400;
+  private boundingBoxHeight = 400;
+  private boxWidth = 100;
+  private boxHeight = 50;
 
   private _boxData = new BehaviorSubject<BoxPositionData[]>([]);
   private dataStore: BoxPositionData[] = [];

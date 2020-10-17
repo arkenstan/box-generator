@@ -32,27 +32,14 @@ export class AppComponent implements OnInit {
   }
 
   selectBox(boxId: number) {
-    if (this.selected > 0) {
+    if (this.selected >= 0) {
       this.lastSelected = this.selected;
     }
     this.selected = boxId;
   }
-  unselectBox(boxId: number) {
-    if (this.selected === boxId) {
-      this.lastSelected = this.selected;
-      this.selected = -1;
-    }
-  }
 
   addBox() {
     this.box$.addBox();
-  }
-  removeBox() {
-    if (this.lastSelected > 0) {
-      this.box$.removeBox(this.lastSelected);
-    } else {
-      console.log('Please select a box to delete');
-    }
   }
   moveBox(event: BoxMoveEvent) {
     const { key } = event;
@@ -60,7 +47,14 @@ export class AppComponent implements OnInit {
     const downKeys = ['s', 'ArrowDown'];
     const leftKeys = ['a', 'ArrowLeft'];
     const rightKeys = ['d', 'ArrowRight'];
-    const allowedKeys = [...upKeys, ...downKeys, ...leftKeys, ...rightKeys];
+    const deleteKeys = ['Delete'];
+    const allowedKeys = [
+      ...upKeys,
+      ...downKeys,
+      ...leftKeys,
+      ...rightKeys,
+      ...deleteKeys,
+    ];
     if (this.selected >= 0 && key && allowedKeys.includes(key)) {
       if (upKeys.includes(key)) {
         this.box$.moveUp(this.selected);
@@ -70,9 +64,12 @@ export class AppComponent implements OnInit {
         this.box$.moveLeft(this.selected);
       } else if (rightKeys.includes(key)) {
         this.box$.moveRight(this.selected);
+      } else if (deleteKeys.includes(key)) {
+        this.box$.removeBox(this.selected);
+        this.selected = -1;
       }
     } else {
-      console.log('Please select a box to move');
+      console.log('Please select a box');
     }
   }
 }

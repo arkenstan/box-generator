@@ -1,7 +1,6 @@
 <div class="container">
   <div class="action">
-    <button (click)="addBox()">Add</button>
-    <button (click)="removeBox()">Remove</button>
+    <button class="btn btn-primary" (click)="addBox()">Add Box</button>
   </div>
   <svg
     class="svg-container"
@@ -15,7 +14,6 @@
       [position]="box"
       [size]="sizeConfig.boxSize"
       (focused)="selectBox($event)"
-      (blurred)="unselectBox($event)"
       (moved)="moveBox($event)"
     ></svg:g>
     <!-- <svg:rect

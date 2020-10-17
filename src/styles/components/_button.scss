@@ -1,0 +1,22 @@
+.btn {
+  border-radius: 5px;
+  min-width: 100px;
+  min-height: 50px;
+  padding: 10px;
+  margin: 5px;
+  font-size: 0.7em;
+  border: 1px solid;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  &.btn-primary {
+    background-color: #4c8cec;
+    border-color: #024f75;
+  }
+  &.btn-danger {
+    color: #fff;
+    background-color: #d44242;
+    border-color: #f00;
+  }
+}

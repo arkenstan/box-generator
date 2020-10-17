@@ -27,6 +27,7 @@ export class BoxComponent implements OnInit {
   }
   onMove(event: any) {
     const { key } = event;
+    console.log('BoxComponent -> onMove -> key', key);
     this.moved.emit({ key });
   }
 }
