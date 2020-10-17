@@ -1,27 +1,33 @@
 # Boxgen
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.6.
+Moveable box generator.
 
-## Development server
+## Pre-requisites
+
+- Install [nodejs 8+](https://nodejs.org/en/) and npm 4+
+- Install angular cli
+  ```
+  npm i -g @angular/cli
+  ```
+
+## Local Serve
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Dev Build
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Run `ng build` to generate a development build bundle with map file for debugging.
+- Build artifacts will be generated under dist directory
+- Install [http-server](https://www.npmjs.com/package/http-server) to run the build bundle
 
-## Build
+## Prod Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- Run `ng build` to build the project with `--prod` flag. The build artifacts will be stored in the `dist/` directory.
+- Build artifacts will be generated under dist directory
+- Install [http-server](https://www.npmjs.com/package/http-server) to run the build bundle
 
 ## Further help
+
+This project is generate via angular cli
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
