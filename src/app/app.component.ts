@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BoxService } from './services/box.service';
 import { BoxPositionData } from './models/box.model';
+import { BoxSizings } from './models/config.model';
 
 export interface BoxData {
   x: number;
@@ -17,11 +18,13 @@ export class AppComponent implements OnInit {
   count = 0;
   selected = -1;
   lastSelected = -1;
+  sizeConfig: BoxSizings;
   boxData: Observable<BoxPositionData[]>;
 
   constructor(public box$: BoxService) {}
 
   ngOnInit() {
+    this.sizeConfig = this.box$.getSizingConfig();
     this.boxData = this.box$.boxData;
   }
 

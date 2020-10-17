@@ -3,15 +3,19 @@
     <button (click)="addBox()">Add</button>
     <button (click)="removeBox()">Remove</button>
   </div>
-  <svg class="svg-container">
+  <svg
+    class="svg-container"
+    [style.width]="sizeConfig.boundingBoxSize.width + 'px'"
+    [style.height]="sizeConfig.boundingBoxSize.height + 'px'"
+  >
     <svg:rect
       class="box"
       *ngFor="let box of boxData | async"
       [ngClass]="{ selected: isSelected(box.boxId) }"
       [attr.x]="box.x"
       [attr.y]="box.y"
-      width="150"
-      height="100"
+      [attr.width]="sizeConfig.boxSize.width + 'px'"
+      [attr.height]="sizeConfig.boxSize.height + 'px'"
       (focus)="selectBox(box.boxId)"
       (blur)="unselectBox(box.boxId)"
       (keydown)="moveBox($event)"

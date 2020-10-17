@@ -1,6 +1,9 @@
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
 .svg-container {
-  width: 600px;
-  height: 600px;
   border: 1px solid #000;
   .box {
     fill: burlywood;
