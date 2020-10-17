@@ -1,0 +1,11 @@
+<svg:rect
+  class="box"
+  [ngClass]="{ selected: selected }"
+  [attr.x]="position.x"
+  [attr.y]="position.y"
+  [attr.width]="size.width + 'px'"
+  [attr.height]="size.height + 'px'"
+  (focus)="onFocus()"
+  (blur)="onBlur()"
+  (keydown)="onMove($event)"
+></svg:rect>
